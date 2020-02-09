@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DosenController extends Controller
 {
@@ -18,6 +19,14 @@ class DosenController extends Controller
             'namadosen' => $nama,
             'matkul' => $matakuliah
         ]);
+    }
+
+    public function tampil(){
+        // mengambil data dari table dosen
+    	$dosen = DB::table('dosen')->get();
+ 
+    	// mengirim data pegawai ke view index
+    	return view('dosen/tampil',['dosen' => $dosen]);
     }
 
 

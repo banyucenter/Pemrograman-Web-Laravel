@@ -43,3 +43,6 @@ Route::post('/formulir/proses', 'MahasiswaController@proses');
 Route::get('/dosen/profil', 'DosenController@profil');
 Route::get('/dosen/tentang', 'DosenController@tentang');
 Route::get('/dosen/kontak', 'DosenController@kontak');
+
+//route CRUD
+Route::get('/dosen/tampil','DosenController@tampil');
