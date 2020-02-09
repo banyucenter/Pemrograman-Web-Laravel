@@ -34,6 +34,12 @@ Route::get('dosen', 'DosenController@index');
 //routes untuk mengambil data nama dari fungsi ambil
 Route::get('/mahasiswa/ambil/{nama}', 'MahasiswaController@ambil');
 
-
+//routes untuk get post request
 Route::get('/mahasiswa/formulir', 'MahasiswaController@formulir');
 Route::post('/formulir/proses', 'MahasiswaController@proses');
+
+
+//routes untuk template dinamis
+Route::get('/dosen/profil', 'DosenController@profil');
+Route::get('/dosen/tentang', 'DosenController@tentang');
+Route::get('/dosen/kontak', 'DosenController@kontak');
