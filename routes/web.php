@@ -30,3 +30,10 @@ Route::get('profil', function () {
 
 //routes mengarah pada controller Dosen
 Route::get('dosen', 'DosenController@index');
+
+//routes untuk mengambil data nama dari fungsi ambil
+Route::get('/mahasiswa/ambil/{nama}', 'MahasiswaController@ambil');
+
+
+Route::get('/mahasiswa/formulir', 'MahasiswaController@formulir');
+Route::post('/formulir/proses', 'MahasiswaController@proses');
