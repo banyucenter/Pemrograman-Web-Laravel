@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//rotes baru pad alaravel
+Route::get('halo', function () {
+	return "Halo, Selamat datang di matakuliah pemrograman website";
+});
+
+
+//routes dengan template html sendiri
+Route::get('profil', function () {
+	return view('profil');
+});
