@@ -26,3 +26,7 @@ Route::get('halo', function () {
 Route::get('profil', function () {
 	return view('profil');
 });
+
+
+//routes mengarah pada controller Dosen
+Route::get('dosen', 'DosenController@index');
