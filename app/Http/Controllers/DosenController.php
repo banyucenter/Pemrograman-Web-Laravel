@@ -83,6 +83,15 @@ class DosenController extends Controller
         return redirect('/dosen/tampil');
     }
 
+    public function hapus($id)
+    {
+        // menghapus data pegawai berdasarkan id yang dipilih
+        DB::table('dosen')->where('id_dosen',$id)->delete();
+            
+        // alihkan halaman ke halaman pegawai
+        return redirect('/dosen/tampil');
+    }
+
 
     //untuk template dinamis
     public function profil(){

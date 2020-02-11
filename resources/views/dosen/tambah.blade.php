@@ -14,8 +14,7 @@
 	<br/>
 
 	<form action="/dosen/aksi_tambah" method="post">
-    
-	<input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>" />
+    {{ csrf_field() }}
 		Nama <input type="text" name="nama" required="required"> <br/>
 		Jabatan <input type="text" name="jabatan" required="required"> <br/>
 		Gaji <input type="number" name="gaji" required="required"> <br/>

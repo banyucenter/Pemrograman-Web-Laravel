@@ -57,3 +57,6 @@ Route::post('/dosen/update','DosenController@update');
 
 //route edit
 Route::get('/dosen/edit/{id}','DosenController@edit');
+
+//Route hapus
+Route::get('/dosen/hapus/{id}','DosenController@hapus');
