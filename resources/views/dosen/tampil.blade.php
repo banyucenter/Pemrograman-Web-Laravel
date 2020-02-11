@@ -4,7 +4,14 @@
 	<title>Pemrograman Website</title>
 </head>
 <body>
- 
+	<style type="text/css">
+		.pagination li{
+			float: left;
+			list-style-type: none;
+			margin:5px;
+		}
+	</style>
+
 	<h2>DOSEN STIKOM YOS</h2>
 	<h3>Data Dosen</h3>
  
@@ -35,6 +42,14 @@
 		</tr>
 		@endforeach
 	</table>
+
+	<br/>
+	Halaman : {{ $dosen->currentPage() }} <br/>
+	Jumlah Data : {{ $dosen->total() }} <br/>
+	Data Per Halaman : {{ $dosen->perPage() }} <br/>
+ 
+ 
+	{{ $dosen->links() }}
  
  
 </body>

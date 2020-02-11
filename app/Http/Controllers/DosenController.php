@@ -29,7 +29,7 @@ class DosenController extends Controller
         // mengambil data dari table dosen
        // $dosen = DB::table('dosen')->get();
         
-        $dosen = DB::table('dosen')->orderBy('id_dosen', 'desc')->get();
+        $dosen = DB::table('dosen')->orderBy('id_dosen', 'desc')->paginate(10);;
  
     	// mengirim data pegawai ke view index
     	return view('dosen/tampil',['dosen' => $dosen]);
