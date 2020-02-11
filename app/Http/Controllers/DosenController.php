@@ -11,7 +11,11 @@ class DosenController extends Controller
         //data dalam bentuk single
         $nama = "Purwono, S.Kom otw M.Kom";
         //data dalam bentuk array
-        $matakuliah = ["Proyek Perangkat Lunak","Pemrogramman Website","Pembelajaran Mesin"];
+        $matakuliah = [
+            "Proyek Perangkat Lunak",
+            "Pemrogramman Website",
+            "Pembelajaran Mesin"
+        ];
 
         //Passing (Lempar) data ke View biodata.blade.php
         return view('biodata',
@@ -27,6 +31,30 @@ class DosenController extends Controller
  
     	// mengirim data pegawai ke view index
     	return view('dosen/tampil',['dosen' => $dosen]);
+    }
+
+    // method untuk menampilkan view form tambah dosen
+    public function tambah()
+    {
+    
+        // memanggil view tambah
+        return view('dosen/tambah');
+    
+    }
+
+    // method untuk insert data ke table dosen
+    public function aksi_tambah(Request $request)
+    {
+        // insert data ke table pegawai
+        DB::table('dosen')->insert([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'gaji' => $request->gaji,
+            'status' => $request->status
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('/dosen/tampil');
+
     }
 
 
