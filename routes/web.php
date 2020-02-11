@@ -53,3 +53,7 @@ Route::get('/mahasiswa/tambah','MahasiswaController@tambah');
 //aksi tambah 
 Route::post('/dosen/aksi_tambah','DosenController@aksi_tambah');
 Route::post('/mahasiswa/aksi_tambah','MahasiswaController@aksi_tambah');
+Route::post('/dosen/update','DosenController@update');
+
+//route edit
+Route::get('/dosen/edit/{id}','DosenController@edit');

@@ -59,6 +59,30 @@ class DosenController extends Controller
 
     }
 
+    // method untuk edit data pegawai
+    public function edit($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $dosen = DB::table('dosen')->where('id_dosen',$id)->get();
+        // passing data pegawai yang didapat ke view edit.blade.php
+        return view('dosen/edit',['dosen' => $dosen]);
+    
+    }
+
+    // update data pegawai
+    public function update(Request $request)
+    {
+        // update data pegawai
+        DB::table('dosen')->where('id_dosen',$request->id)->update([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'gaji' => $request->gaji,
+            'status' => $request->status
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('/dosen/tampil');
+    }
+
 
     //untuk template dinamis
     public function profil(){
