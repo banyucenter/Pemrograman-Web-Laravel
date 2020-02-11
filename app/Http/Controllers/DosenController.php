@@ -27,7 +27,9 @@ class DosenController extends Controller
 
     public function tampil(){
         // mengambil data dari table dosen
-    	$dosen = DB::table('dosen')->get();
+       // $dosen = DB::table('dosen')->get();
+        
+        $dosen = DB::table('dosen')->orderBy('id_dosen', 'desc')->get();
  
     	// mengirim data pegawai ke view index
     	return view('dosen/tampil',['dosen' => $dosen]);

@@ -46,7 +46,10 @@ Route::get('/dosen/kontak', 'DosenController@kontak');
 
 //route CRUD
 Route::get('/dosen/tampil','DosenController@tampil');
-//route tambah data dosen
+Route::get('/mahasiswa/tampil','MahasiswaController@index');
+//route tambah data 
 Route::get('/dosen/tambah','DosenController@tambah');
-//aksi tambah dosen
+Route::get('/mahasiswa/tambah','MahasiswaController@tambah');
+//aksi tambah 
 Route::post('/dosen/aksi_tambah','DosenController@aksi_tambah');
+Route::post('/mahasiswa/aksi_tambah','MahasiswaController@aksi_tambah');
