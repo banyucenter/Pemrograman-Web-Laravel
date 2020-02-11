@@ -19,6 +19,13 @@
 	
 	<br/>
 	<br/>
+
+	<p>Cari Data Dosen :</p>
+	<form action="/dosen/cari" method="GET">
+		<input type="text" name="cari" placeholder="Cari Dosen .." value="{{ old('cari') }}">
+		<input type="submit" value="CARI">
+	</form>
+	<br>
  
 	<table border="1">
 		<tr>

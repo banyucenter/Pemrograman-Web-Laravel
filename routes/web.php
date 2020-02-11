@@ -60,3 +60,6 @@ Route::get('/dosen/edit/{id}','DosenController@edit');
 
 //Route hapus
 Route::get('/dosen/hapus/{id}','DosenController@hapus');
+
+//Route cari
+Route::get('/dosen/cari','DosenController@cari');

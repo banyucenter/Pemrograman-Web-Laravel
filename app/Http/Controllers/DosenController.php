@@ -92,6 +92,21 @@ class DosenController extends Controller
         return redirect('/dosen/tampil');
     }
 
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$dosen = DB::table('dosen')
+		->where('nama','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data pegawai ke view index
+		return view('dosen/tampil',['dosen' => $dosen]);
+ 
+	}
+
 
     //untuk template dinamis
     public function profil(){
