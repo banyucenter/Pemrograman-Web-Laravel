@@ -2,23 +2,23 @@
 <html>
 <head>
 	<title>Pemrograman Website</title>
+	<link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
 </head>
 <body>
-	<style type="text/css">
-		.pagination li{
-			float: left;
-			list-style-type: none;
-			margin:5px;
-		}
-	</style>
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
 
-	<h2>DOSEN STIKOM YOS</h2>
+	<h2>STIKOM YOS SUDARSO PURWOKERTO</h2>
 	<h3>Data Dosen</h3>
  
 	<a href="/dosen/tambah"> + Tambah Dosen Baru</a>
 	
 	<br/>
 	<br/>
+	<div class="form-group">
+					
+	</div>
 
 	<p>Cari Data Dosen :</p>
 	<form action="/dosen/cari" method="GET">
@@ -27,7 +27,7 @@
 	</form>
 	<br>
  
-	<table border="1">
+	<table class="table table-bordered" >
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -42,9 +42,9 @@
 			<td>{{ $p->gaji }}</td>
 			<td>{{ $p->status }}</td>
 			<td>
-				<a href="/dosen/edit/{{ $p->id_dosen }}">Edit</a>
-				|
-				<a href="/dosen/hapus/{{ $p->id_dosen }}">Hapus</a>
+				<a class="btn btn-warning btn-sm" href="/dosen/edit/{{ $p->id_dosen }}">Edit</a>
+				
+				<a class ="btn btn-danger btn-sm" href="/dosen/hapus/{{ $p->id_dosen }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
@@ -57,7 +57,9 @@
  
  
 	{{ $dosen->links() }}
- 
+	</div>
+		</div>
+	</div>
  
 </body>
 </html>
