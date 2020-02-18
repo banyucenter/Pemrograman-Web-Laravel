@@ -63,3 +63,8 @@ Route::get('/dosen/hapus/{id}','DosenController@hapus');
 
 //Route cari
 Route::get('/dosen/cari','DosenController@cari');
+
+//Route Form Validasi
+Route::get('/validasi/input', 'ValidasiController@index');
+Route::post('/validasi/proses', 'ValidasiController@proses');
+
